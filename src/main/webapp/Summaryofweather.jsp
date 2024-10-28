@@ -78,25 +78,17 @@
         </form>
 
         <script>
-            function fetchWeatherSummary() {
-                // Capture the values from the form
-                const city = document.getElementById('citySelect').value;
-                const days = document.getElementById('days').value;
-
-            
-
-                // Check if values are captured correctly
-                if (!city || !days) {
-                    alert("Please select a city and enter the number of days.");
-                    return false; // Prevent form submission
-                }
-
-                const url = `http://localhost:8080/Summaryofweather.jsp/${city}/${days}`;
-                console.log("Redirecting to URL:", url);
-                // Redirect to the constructed URL
-                window.location.href = url;
-                return false; // Prevent form default action
+           document.getElementById("weatherForm").onsubmit = function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            var selectedCity = document.getElementById("citySelect").value;
+            var selectedDays = document.getElementById("days").value
+            if (selectedCity === "" || selectedDays === "") {
+                alert("Please select a city and days.");
+                return;
             }
+            // Redirect to the desired URL
+            window.location.href = "/Summaryofweather.jsp/" + encodeURIComponent(selectedCity) +"/" + encodeURIComponent(selectedDays);
+        };
             
         </script>
 
@@ -117,7 +109,6 @@
                         </div>
                     </div>
                 </c:forEach>
-                <h2>Temperature Overview</h2>
         <canvas id="weatherChart"></canvas>
             </c:if>
         </div>
