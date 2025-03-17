@@ -1,4 +1,4 @@
-# Weather Update application
+# Weather application
 
 ## Table of Contents
 - [Description](#description)
@@ -39,13 +39,13 @@ This application simulates a sequence of weather updates for major metro cities 
   
 ### Steps to Install
 **Clone the repository:**
-   ```bash
+  
    git clone https://github.com/divya2111/weatherapp.git
    cd weatherapp
    
    Install Required Software: Ensure Java, Maven, and MySQL are installed as mentioned in the prerequisites.
    
-###Configure MySQL Database
+## Configure MySQL Database
    
    USE weather_db
    
@@ -60,7 +60,7 @@ This application simulates a sequence of weather updates for major metro cities 
     temp DECIMAL(5, 2) NOT NULL
 );
 
-##Build Instructions
+## Build Instructions
  **Run the Application**:
    You can run the application using one of the following methods:
 
@@ -72,16 +72,16 @@ This application simulates a sequence of weather updates for major metro cities 
 
    **Option B: Using Command Line**
    If you prefer to run the application from the command line, use:
-   ```bash
+   
    ./mvnw spring-boot:run
    
   Access the Application: http://localhost:8080/
    
-##Design Choices
+## Design Choices
 Architecture: The application follows a layered architecture with separate layers for controllers, services, and repositories to maintain separation of concerns.
 Database Design: The weather table is designed to store relevant weather information, including temperature, humidity, and conditions, facilitating efficient querying and updates.
 
-##Dependencies
+## Dependencies
 To set up and run the application, you will need the following dependencies:
 
 Required Software
